@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container{
+	margin: 1em;
+	background-color: #eee;
+	border: 1px solid gray;
+	padding: 20px;
+	overflow:auto;
+}
+#TeamLogo-container{
+	width:200px;
+	float:left;
+	border: 1px solid gray;
+	box-sizing: border-box;
+	padding: 20px;
+	background:white;
+	overflow:auto;
+}
+
+#TeamLogo-container img{
+	float: left;
+	margin:0;
+}
+
+#TeamLogo-container span{
+
+	padding:0 20px;
+	font-weight:bold;
+	text-align: center;
+}
+
+.Logo{
+	width:80px;
+	height:80px;
+	margin-top: 20px;
+}
+
+#description-container{
+	margin-left:220px;
+	margin-right:140px;
+	display:block;
+	background:white;
+}
+
+#MemberLogo-container{
+	width:120px;
+	height:436px;
+	float:right;
+	border:1px solid gray;
+	padding:0px 20px 20px;
+	box-sizing: border-box;
+	background:white;
+}
+
+
+#MemberLogo-container ul{
+	list-style-type: none;
+}
+
+#description-container{
+	box-sizing: border-box;
+	padding: 20px;
+	border:1px solid gray;
+}
+
+#description-container h1{
+	font-size:20;
+	font-weight:bold;
+}
+
+@media (max-width: 500px) {
+	#container div {
+    background-color: #fff;
+    width: 100% !important;
+    height:auto;
+    margin-bottom: 20px;
+    float:none;
+    margin:20px 0;
+}
+@media (max-width: 500px) {
+	li {
+	display:inline;
+}
