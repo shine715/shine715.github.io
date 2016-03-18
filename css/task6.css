@@ -1,0 +1,49 @@
+#page{
+	width:980px;
+	height:1386px;
+	background-color:pink;
+}
+
+#container{
+	width:892px;
+	height:1386px;
+	background-color:#deedee;
+	margin:auto;
+}
+
+header{
+	position:relative;
+	min-height:63px;
+	box-sizing:border-box;
+	background-color:yellow;
+	border:2px solid gray;
+}
+
+#IFEurl{
+	width:110px;
+	background-color:red;
+	color:white;
+	height:61px;
+	display:inline-block;
+}
+
+#YearMonth{
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+#TopLeft{
+	display:inline-block;
+	background-color:orange;
+	height:575px;
+	margin-top:30px;
+	width:652px;
+}
+
+#TopRight{
+	display:inline-block;
+	background-color:blue;
+	height:575px;
+	width:203px;
+}
