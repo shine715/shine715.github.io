@@ -1,3 +1,8 @@
+
+*{
+	margin:0;
+}
+
 #page{
 	width:980px;
 	height:1386px;
@@ -9,14 +14,15 @@
 	height:1386px;
 	background-color:#deedee;
 	margin:auto;
+	position:relative;
 }
 
 header{
 	position:relative;
-	min-height:63px;
-	box-sizing:border-box;
+	height:61px;
+/*	box-sizing:border-box;*/
 	background-color:yellow;
-	border:2px solid gray;
+	border-bottom:2px solid gray;
 }
 
 #IFEurl{
@@ -34,16 +40,82 @@ header{
 }
 
 #TopLeft{
-	display:inline-block;
+	position: absolute;
+	top:63px;
+	left:0;
 	background-color:orange;
 	height:575px;
+	width:641px;
 	margin-top:30px;
-	width:652px;
 }
 
-#TopRight{
+#TopLeft img{
+	width:641px;
+	height:301px;
+}
+
+#green{
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:rgba(65,140,88,0.5);
+	height:301px;
+	width:191px;
+}
+
+#red{
+	position:absolute;
+	top:0;
+	right:0;
+	background-color:rgba(204,118,128,0.5);
+	height:301px;
+	width:191px;
+}
+
+.topLeftContent{
 	display:inline-block;
+	width: 200px;
+	height:270px;
+	margin-right: 20px;
+	background-color:gray;
+}
+
+.topLeftContent2{
+	display:inline-block;
+	width: 150px;
+	height:270px;
+	background-color:gray;
+}
+
+.contentTitle{
+	font-weight:900;
+	color:blue;
+	text-decoration: underline;
+}
+
+
+#TopRight{
 	background-color:blue;
 	height:575px;
 	width:203px;
+	margin-top:30px;
+	position:absolute;
+	top:63px;
+	right:0px;
+}
+
+#BottomLeft{
+	float:left;
+	margin-top:610px;
+	background-color:red;
+	width:470px;
+	height:500px;
+}
+
+#BottomRight{
+	float:right;
+	margin-top:610px;
+	background-color:purple;
+	width:400px;
+	height:500px;
 }
