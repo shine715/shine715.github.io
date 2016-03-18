@@ -6,22 +6,24 @@
 #page{
 	width:980px;
 	height:1386px;
-	background-color:pink;
+/*	background-color:pink;*/
 }
 
+/*container部分*/
 #container{
 	width:892px;
 	height:1386px;
-	background-color:#deedee;
+/*	background-color:#deedee;*/
 	margin:auto;
 	position:relative;
 }
 
+/*header部分*/
 header{
 	position:relative;
 	height:61px;
 /*	box-sizing:border-box;*/
-	background-color:yellow;
+/*	background-color:yellow;*/
 	border-bottom:2px solid #938e8c;
 }
 
@@ -50,11 +52,13 @@ header{
 	font-family:'SimHei';
 }
 
+
+/*左上部*/
 #TopLeft{
 	position: absolute;
 	top:63px;
 	left:0;
-	background-color:orange;
+/*	background-color:orange;*/
 	height:575px;
 	width:641px;
 	margin-top:30px;
@@ -88,7 +92,8 @@ header{
 	width: 200px;
 	height:270px;
 	margin-right: 20px;
-	background-color:#dcdcdc;
+	margin-top:30px;
+/*	background-color:#dcdcdc;*/
 	vertical-align: top;
 	color:#767777;
 	font-family: 'SimSun';
@@ -111,7 +116,8 @@ header{
 	display:inline-block;
 	width: 150px;
 	height:270px;
-	background-color:#dcdcdc;
+	margin-top:30px;
+/*	background-color:#dcdcdc;*/
 	vertical-align: top;
 	color:#767777;
 	font-family: 'SimSun';
@@ -143,8 +149,10 @@ header{
 	opacity:0.7；
 }
 
+
+/*右上部*/
 #TopRight{
-	background-color:white;
+/*	background-color:white;*/
 	height:301px;
 	width:203px;
 	margin-top:30px;
@@ -159,8 +167,6 @@ header{
 	font-size: 16px;
 	color:#000000;
 	font-family:'Microsoft YaHei';
-/*	text-decoration: underline;*/
-
 }
 
 #TopRight span::first-letter{
@@ -194,33 +200,37 @@ header{
 #pinkletterDiv{
 	position:absolute;
 	bottom:0px;
+	width:100%;
+	left:10px;
 }
 
 #pinkBig{
 	font-size:55px;
 	color:#cc8091;
 	font-family:'Microsoft YaHei';
-	display:inline;
-	width:50px;
+	width:40%;
+	display:inline-block;
 }
 
 #smallCss{
 	font-family:'Microsoft YaHei';
-	display:inline;
+	width:60%;
+	float:right;
+	margin-top:27px;
 }
 
 #pinkMedium{
-	font-size:21px;
+	font-size:15px;
 	color:#cc8091;
-
 }
 
 #graySmall{
-	font-size:12px;
-	color:#cc8091;
+	font-size:10px;
+	color:#676767;
 }
 
 
+/*左下部*/
 #BottomLeft{
 	float:left;
 	margin-top:610px;
@@ -229,6 +239,8 @@ header{
 	height:500px;
 }
 
+
+/*右下部*/
 #BottomRight{
 	float:right;
 	margin-top:610px;
