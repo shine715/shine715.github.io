@@ -89,7 +89,7 @@ header{
 
 .topLeftContent{
 	display:inline-block;
-	width: 200px;
+	width: 210px;
 	height:270px;
 	margin-right: 20px;
 	margin-top:30px;
@@ -234,17 +234,159 @@ header{
 #BottomLeft{
 	float:left;
 	margin-top:610px;
-	background-color:red;
-	width:470px;
-	height:500px;
+	width:415px;
+	height:650px;
+}
+
+#BottomLeftHeader{
+	margin-top:10px;
+}
+
+#BottomLeftHeader p:first-child{
+	color:#11456b;
+	font-size:42px;
+	font-weight:900;
+	font-family:'SimHei';
+	margin-bottom:16px;
+	line-height:35px;
+}
+
+#BottomLeftHeader span{
+	font-size:72px;
+	color:#f5e327;
+	font-style:oblique;
+}
+
+#BottomLeftHeader p:last-child{
+	color:#11456b;
+	font-size:33px;
+	font-weight:900;
+	font-family:'SimHei';
+	padding-bottom:10px;
+	border-bottom:2px solid #11456c;
+}
+
+#BottomLeftContent{
+	font-size:12px;
+	color:#767777;
+	font-family:'SimSun';
+	clear:both;
+	line-height:16px;
+}
+
+#BottomLeftContent::first-letter{
+	font-size:70px;
+	color:#f5e327;
+	font-family:'Microsoft YaHei';
+	float:left;
+	line-height:70px;
 }
 
 
+#BottomLeftContent img{
+	float:right;
+}
 /*右下部*/
 #BottomRight{
 	float:right;
 	margin-top:610px;
-	background-color:purple;
-	width:400px;
-	height:500px;
+/*	background-color:purple;*/
+	width:460px;
+	height:650px;
+}
+
+#BottomRightImageDiv{
+	height:275px;
+	width:458px;
+/*	line-height:275px;*/
+	position:relative;
+}
+
+#CoverOnImage{
+	background-color:rgba(0,0,0,0.6);
+	height:61px;
+	width:100%;
+	position:absolute;
+	bottom:18px;
+}
+
+#TextOnCover{
+	line-height:61px;
+	padding-left:50px;
+}
+
+#smallText{
+	font-size:12px;
+	color:#72b16a;
+	font-style:italic;
+	font-family:'Microsoft YaHei';
+	padding-left:5px;
+}
+
+#bigText{
+	font-size:26px;
+	color:#ffffff;
+	font-family:'Microsoft YaHei';
+	border-left:2px solid #72b16a;
+}
+
+#BottomRightBottom{
+	background-color:#eeeed6;
+	position:relative;
+	height:330px;
+}
+
+#BottomRightBottom li{
+	line-height:36px;
+	font-size:16px;
+	color:#5a5b5b;
+	font-family:'SimSun';
+}
+
+#BottomRightRed{
+	height:160px;
+	width:260px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	background-color:#d55d5c;
+	line-height: 160px;
+}
+
+#bigO{
+	font-size:110px;
+	color:#ffffff;
+	font-family:'Microsoft YaHei';
+/*	background-color:purple;*/
+	position:relative;
+	height:100px;
+	width:100%;
+	margin:auto,0;
+}
+
+#bigOside{
+	font-size:21px;
+	color:#ffffff;
+	font-family:'SimHei';
+	font-style:oblique;
+	width:60%;
+/*	background-color:green;*/
+	position:absolute;
+	bottom:0;
+	right:0;
+	line-height:24px;
+
+}
+
+#BottomRightQuote{
+	width:199px;
+	height:160px;
+	position:absolute;
+	right:0;
+	bottom:0;
+	font-size:14px;
+	color:#5a5b5b;
+	font-family:'SimHei';
+	font-style:oblique;
+/*	background-color:blue;*/
 }
