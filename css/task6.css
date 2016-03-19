@@ -272,6 +272,7 @@ header{
 	font-family:'SimSun';
 	clear:both;
 	line-height:16px;
+	margin-top: 20px;
 }
 
 #BottomLeftContent::first-letter{
@@ -302,12 +303,17 @@ header{
 	position:relative;
 }
 
+#BottomRightImageDiv img{
+	height:275px;
+	width:458px;	
+}
+
 #CoverOnImage{
 	background-color:rgba(0,0,0,0.6);
 	height:61px;
 	width:100%;
 	position:absolute;
-	bottom:18px;
+	bottom:0px;
 }
 
 #TextOnCover{
@@ -334,13 +340,47 @@ header{
 	background-color:#eeeed6;
 	position:relative;
 	height:330px;
+	margin-top:30px;
+	padding-top:20px;
 }
 
-#BottomRightBottom li{
+#BottomRightBottom ol{
+	list-style: none;
+}
+
+#listLeft{
+	width:70%;
+	display:inline-block;
+}
+
+#listLeft li{
 	line-height:36px;
 	font-size:16px;
 	color:#5a5b5b;
 	font-family:'SimSun';
+}
+
+#spanUnderline{
+	border-bottom: 2px dashed red;
+	width:20px;
+}
+
+#listRight{
+	float:right;
+}
+
+#listRight li{
+	line-height:36px;
+	font-size:12px;
+	color:#5a5b5b;
+	font-family:'SimSun';
+	font-style:oblique;
+}
+
+#listLeft li:before {
+    content: '\25B2';
+    padding-right: 8px;
+    color:#5a5b5b;
 }
 
 #BottomRightRed{
@@ -350,7 +390,8 @@ header{
 	left:0;
 	bottom:0;
 	background-color:#d55d5c;
-	line-height: 160px;
+/*	line-height: 160px;*/
+	display:table;
 }
 
 #bigO{
@@ -358,24 +399,36 @@ header{
 	color:#ffffff;
 	font-family:'Microsoft YaHei';
 /*	background-color:purple;*/
-	position:relative;
+/*	position:relative;
 	height:100px;
 	width:100%;
-	margin:auto,0;
+	margin:auto,0;*/
+	height:160px;
+	width:30%;
+	float:left;
 }
 
 #bigOside{
-	font-size:21px;
 	color:#ffffff;
 	font-family:'SimHei';
-	font-style:oblique;
-	width:60%;
-/*	background-color:green;*/
-	position:absolute;
-	bottom:0;
-	right:0;
-	line-height:24px;
+	margin-left:30%;
+	height:160px;
+	vertical-align: middle;
+	display:table-cell;
 
+}
+
+#onetwothree{
+	font-size:21px;
+	font-style:oblique;
+	border-left:2px solid #ffffff;
+	padding-left:5px;
+}
+
+#helloworld{
+	font-size:12px;
+	border-left:2px solid #ffffff;
+	padding-left:5px;
 }
 
 #BottomRightQuote{
@@ -388,5 +441,26 @@ header{
 	color:#5a5b5b;
 	font-family:'SimHei';
 	font-style:oblique;
+	display:table;
 /*	background-color:blue;*/
+}
+
+#quoteContent{
+	text-indent:20px;
+	display:table-cell;
+	vertical-align: middle;
+	line-height:16px;
+}
+
+#start{
+	color:#d55d5c;
+	font-size:100px;
+	line-height:20px;
+	float:left;
+}
+#end{
+	color:#d55d5c;
+	font-size:100px;
+	line-height:20px;
+	float:right;
 }
