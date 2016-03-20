@@ -249,6 +249,7 @@ header{
 	font-family:'SimHei';
 	margin-bottom:16px;
 	line-height:35px;
+
 }
 
 #BottomLeftHeader span{
@@ -281,17 +282,19 @@ header{
 	font-family:'Microsoft YaHei';
 	float:left;
 	line-height:70px;
+	padding-right:5px;
+	padding-bottom:5px;
 }
-
 
 #BottomLeftContent img{
 	float:right;
 }
+
+
 /*右下部*/
 #BottomRight{
 	float:right;
 	margin-top:610px;
-/*	background-color:purple;*/
 	width:460px;
 	height:650px;
 }
@@ -299,7 +302,6 @@ header{
 #BottomRightImageDiv{
 	height:275px;
 	width:458px;
-/*	line-height:275px;*/
 	position:relative;
 }
 
@@ -326,61 +328,57 @@ header{
 	color:#72b16a;
 	font-style:italic;
 	font-family:'Microsoft YaHei';
-	padding-left:5px;
+	padding-left:10px;
 }
 
 #bigText{
 	font-size:26px;
 	color:#ffffff;
 	font-family:'Microsoft YaHei';
-	border-left:2px solid #72b16a;
+	border-left:3px solid #72b16a;
+	padding-left:10px;
 }
 
 #BottomRightBottom{
 	background-color:#eeeed6;
 	position:relative;
-	height:330px;
+	height:300px;
 	margin-top:30px;
-	padding-top:20px;
+	padding-top:30px;
 }
 
-#BottomRightBottom ol{
+#BottomRightBottomList li{
 	list-style: none;
+	background-image:url('../images/task6dots.png');
+	background-repeat:repeat-x;
+	background-position:center;
 }
 
-#listLeft{
-	width:70%;
-	display:inline-block;
-}
-
-#listLeft li{
+.listLeft{
 	line-height:36px;
 	font-size:16px;
 	color:#5a5b5b;
 	font-family:'SimSun';
+	background-color:#eeeed6;
+	margin-left:-4px;
 }
 
-#spanUnderline{
-	border-bottom: 2px dashed red;
-	width:20px;
-}
-
-#listRight{
-	float:right;
-}
-
-#listRight li{
+.listRight{
 	line-height:36px;
 	font-size:12px;
 	color:#5a5b5b;
 	font-family:'SimSun';
 	font-style:oblique;
+	float:right;
+	background-color:#eeeed6;
+	padding-right:20px;
 }
 
-#listLeft li:before {
+#BottomRightBottomList li:before {
     content: '\25B2';
     padding-right: 8px;
     color:#5a5b5b;
+    background-color:#eeeed6;
 }
 
 #BottomRightRed{
@@ -390,7 +388,6 @@ header{
 	left:0;
 	bottom:0;
 	background-color:#d55d5c;
-/*	line-height: 160px;*/
 	display:table;
 }
 
@@ -398,11 +395,6 @@ header{
 	font-size:110px;
 	color:#ffffff;
 	font-family:'Microsoft YaHei';
-/*	background-color:purple;*/
-/*	position:relative;
-	height:100px;
-	width:100%;
-	margin:auto,0;*/
 	height:160px;
 	width:30%;
 	float:left;
@@ -432,35 +424,51 @@ header{
 }
 
 #BottomRightQuote{
-	width:199px;
+	width:170px;
 	height:160px;
 	position:absolute;
-	right:0;
+	right:15px;
 	bottom:0;
 	font-size:14px;
 	color:#5a5b5b;
 	font-family:'SimHei';
 	font-style:oblique;
 	display:table;
-/*	background-color:blue;*/
 }
 
 #quoteContent{
-	text-indent:20px;
+	text-indent:43px;
 	display:table-cell;
 	vertical-align: middle;
 	line-height:16px;
 }
 
-#start{
-	color:#d55d5c;
-	font-size:100px;
-	line-height:20px;
-	float:left;
+.quoteOpen{
+	position:absolute;
+	top:22px;
+	left:0;
 }
-#end{
-	color:#d55d5c;
-	font-size:100px;
-	line-height:20px;
+
+.quoteEnd{
+	position:absolute;
+	bottom:22px;
+	right:0;
+}
+
+
+/*footer部分*/
+footer{
+	border-top:1px solid #938e8c;
+	position:absolute;
+	bottom:0;
+	height:50px;
+	width:100%;
+}
+
+footer div{
 	float:right;
+	color:#d45d5c;
+	font-size:12px;
+	font-family:'SimHei';
+
 }
