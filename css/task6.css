@@ -272,8 +272,10 @@ header{
 	color:#767777;
 	font-family:'SimSun';
 	clear:both;
-	line-height:16px;
+	line-height:17px;
 	margin-top: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #BottomLeftContent::first-letter{
@@ -282,12 +284,15 @@ header{
 	font-family:'Microsoft YaHei';
 	float:left;
 	line-height:70px;
-	padding-right:5px;
-	padding-bottom:5px;
+	padding-right:10px;
+	padding-bottom:10px;
 }
 
 #BottomLeftContent img{
 	float:right;
+	padding-left:10px;
+	padding-bottom:10px;
+	padding-top:10px;
 }
 
 
