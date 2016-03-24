@@ -12,9 +12,13 @@ var aqiData = {};
  * 从用户输入中获取数据，向aqiData中增加一条数据
  * 然后渲染aqi-list列表，增加新增的数据
  */
+
+
 function addAqiData() {
-	var inputCity=document.getElementById('aqi-city-input');
-	var inputAqi=document.getElementById('aqi-value-input');
+	var inputCity=document.getElementById('aqi-city-input').value;
+  var inputAqi=document.getElementById('aqi-value-input').value;
+  console.log(inputCity);
+  console.log(inputAqi);  
 	aqiData.inputCity=inputAqi;
 }
 
@@ -22,7 +26,7 @@ function addAqiData() {
  * 渲染aqi-table表格
  */
 function renderAqiList() {
-	document.write(aqiData);
+  console.log(aqiData);
 }
 
 /**
@@ -48,8 +52,6 @@ function init() {
 
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   var addBtn = document.getElementById('add-btn');
-  console.log(document.getElementsByTagName('button'));
-  console.log(addBtn);
   addBtn.addEventListener('click',addBtnHandle);
 
 
