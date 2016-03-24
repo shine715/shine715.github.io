@@ -15,18 +15,58 @@ var aqiData = {};
 
 
 function addAqiData() {
-	var inputCity=document.getElementById('aqi-city-input').value;
-  var inputAqi=document.getElementById('aqi-value-input').value;
-  console.log(inputCity);
-  console.log(inputAqi);  
-	aqiData.inputCity=inputAqi;
+	var City=document.getElementById('aqi-city-input').value;
+  var Aqi=document.getElementById('aqi-value-input').value;
+
+	aqiData.inputCity=City;
+  aqiData.inputAqi=Aqi;
+
+  console.log(aqiData);
+  console.log(aqiData.inputCity);
 }
 
 /**
  * 渲染aqi-table表格
  */
+var thead = true;
 function renderAqiList() {
-  console.log(aqiData);
+
+  var aqiTable= document.getElementById('aqi-table');
+
+  var addTr = function(){
+    var myTr = document.createElement('tr');
+    var myTd1 = document.createElement('td');
+    var myTd2 = document.createElement('td');
+    var myTd3 = document.createElement('td');
+    var OpBtn = document.createElement('button');
+    addAqiData();
+    myTd1.textContent = aqiData.inputCity;
+    myTd2.textContent = aqiData.inputAqi;
+    OpBtn.textContent = '删除';
+    myTd3.appendChild(OpBtn);
+    myTr.appendChild(myTd1);
+    myTr.appendChild(myTd2);
+    myTr.appendChild(myTd3); 
+    aqiTable.appendChild(myTr);
+  }
+  if(thead){
+    var myTr = document.createElement('tr');
+    var myTd1 = document.createElement('td');
+    var myTd2 = document.createElement('td');
+    var myTd3 = document.createElement('td');
+    myTd1.textContent = '城市';
+    myTd2.textContent = '空气质量';
+    myTd3.textContent = '操作';
+    myTr.appendChild(myTd1);
+    myTr.appendChild(myTd2);
+    myTr.appendChild(myTd3); 
+    aqiTable.appendChild(myTr);
+    thead = false;
+    addTr();
+  } else {
+    addTr();
+  }
+
 }
 
 /**
