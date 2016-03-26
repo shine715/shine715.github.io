@@ -52,8 +52,8 @@ function checkAqiInput(){
 }
 
 function addAqiData() {
-	aqiData.city=cityInput.value;
-  aqiData.aqi=aqiInput.value;
+	aqiData.city=cityInput.value.trim();
+  aqiData.aqi=aqiInput.value.trim();
 }
 
 /**
