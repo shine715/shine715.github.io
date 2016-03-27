@@ -44,21 +44,23 @@ var aqiSourceData = {
 
 console.log(aqiSourceData);
 
-var myArray = [];
+var dayArray = [];
+var weekArray = [];
+var tempDayArray = [];
+var monthArray = [];
+var tempMonthArray = [];
 var myDates = [];
-for(i=0;i<91;i++){
-  
-  var d = new Date('2016-01-01');
-  d.setDate(d.getDate() + i);
-  myDates.push(getDateStr(d));
-  // console.log(myDates);
-  myArray.push(aqiSourceData['北京'][myDates[i]]);
-}
-console.log(myArray);
-console.log(myDates);
+
+console.log(tempDayArray);
+console.log(dayArray);
+console.log(weekArray);
+console.log(monthArray);
+
 // 用于渲染图表的数据
 var chartData = {
   // aqiSourceData['北京']
+
+  // return myArray;--日
 };
 
 // 记录当前页面的表单选项
@@ -70,20 +72,66 @@ var pageState = {
 /**
  * 渲染图表
  */
-function renderChart() {
+var canvas = document.getElementById('aqiCanvas');
+var ctx;
+// var rand = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+//日图
 
-//获取最大值，画出纵坐标坐标轴。
-//   var max_value=0;
-//   var values =[];
-//   for(1=0;i<chartData.length;i++){
-//     values[i]
-//   }
-//   for(var m=0;m
-//       if(value[m]>max_value){
-//           max_value=value[m];
-//       }
-//   }
+function renderDayChart() {
+  ctx = canvas.getContext('2d');
+  // ctx.clearRect(0,0,1000,500);
+  var width = canvas.width;
+  var height = canvas.height;
+  canvas.width = width;
+  canvas.height = height;
+  ctx.lineWidth=10;
+  var color;
+  for(i=0;i<dayArray.length;i++){
+    ctx.beginPath();
+    ctx.moveTo(5+i*11,500);
+    ctx.lineTo(5+i*11,500-dayArray[i]);
+    color=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    console.log(color);
+    ctx.strokeStyle=  '#'+color;
+    
+    ctx.stroke();
+    ctx.closePath();
+
+    
+  };
 }
+
+//周图
+function renderWeekChart() {
+  // ctx.clearRect(0,0,1000,500);
+  var width = canvas.width;
+  var height = canvas.height;
+  canvas.width = width;
+  canvas.height = height;
+  ctx.lineWidth=50;
+  for(i=0;i<weekArray.length;i++){
+    ctx.moveTo(25+i*51,500);
+    ctx.lineTo(25+i*51,500-weekArray[i]);
+    ctx.stroke();
+  };
+}
+
+//月图
+function renderMonthChart() {
+  // ctx.clearRect(0,0,1000,500);
+  var width = canvas.width;
+  var height = canvas.height;
+  canvas.width = width;
+  canvas.height = height;
+  ctx.lineWidth=200;
+  for(i=0;i<monthArray.length;i++){
+    ctx.moveTo(100+i*201,500);
+    ctx.lineTo(100+i*201,500-monthArray[i]);
+    ctx.stroke();
+  };
+}
+
+
 
 /**
  * 日、周、月的radio事件点击时的处理函数
@@ -103,13 +151,30 @@ function graTimeChange() {
       change=true;
     }
   }
-  // console.log(change);
-  // console.log('aaa');
-  // console.log(redioPrev);
+  console.log(redioPrev);
   // 设置对应数据
+  // 确定渲染日、周、月图表，还是不渲染
+  if(change){
+    switch(redioPrev.toString()) {
+      case 'false,true,false':
+          console.log('画周图')
+          renderWeekChart(); 
+          break;
+      case 'false,false,true':
+          console.log('画月图')
+          renderMonthChart();
+          break;
+      default:
+          console.log('画日图')
+          renderDayChart();
+    }
+  } else {
+    console.log('没变化')
+    console.log(change);
+  }
 
   // 调用图表渲染函数
-  renderChart();
+  
 }
 
 /**
@@ -148,6 +213,40 @@ function initCitySelector() {
 function initAqiChartData() {
   // 将原始的源数据处理成图表需要的数据格式
   // 处理好的数据存到 chartData 中
+  for(i=0;i<91;i++){
+    var d = new Date('2016-01-01');
+    d.setDate(d.getDate() + i);
+    myDates.push(getDateStr(d));
+
+  //每一个日数据都push进日数据array
+    dayArray.push(aqiSourceData['北京'][myDates[i]]); 
+  //按自然周push进tempArray,每到一周再算temArray的平均数，并push进weekArray
+    tempDayArray.push(aqiSourceData['北京'][myDates[i]]);
+    if(d.getDay()==6){
+      var sum = 0;
+      for(n=0;n<7;n++){
+        if(tempDayArray[n]){
+          sum+=tempDayArray[n];
+        }
+      };
+      var avg = sum/tempDayArray.length;
+      weekArray.push(avg);
+      tempDayArray = [];
+    };
+  //按自然月push进tempArray,每到一月再算temArray的平均数，并push进monthArray
+    tempMonthArray.push(aqiSourceData['北京'][myDates[i]]);
+    if(d.getDate()==1){
+      var sum = 0;
+      for(n=0;n<tempMonthArray.length-1;n++){
+        if(tempMonthArray[n]){
+          sum+=tempMonthArray[n];
+        };
+      };
+      var avg = sum/(tempMonthArray.length-1);
+      monthArray.push(avg);
+      tempMonthArray = [];
+    };
+  };
 }
 
 /**
