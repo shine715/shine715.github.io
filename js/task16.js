@@ -160,6 +160,7 @@ function init() {
       checkAqiInput(e);
     })
   }
+  
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   var addBtn = document.getElementById('add-btn');
   if (addBtn.addEventListener){

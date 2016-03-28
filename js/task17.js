@@ -73,13 +73,24 @@ var pageState = {
  * 渲染图表
  */
 var canvas = document.getElementById('aqiCanvas');
-var ctx;
+var ctx = canvas.getContext('2d');
+
+// canvas.addEventListener('mousemove', function(e) {
+//   var x = e.pageX - canvas.offsetLeft;
+//   var y = e.pageY - canvas.offsetTop;
+//   var str = 'X : ' + x + ', ' + 'Y : ' + y;
+//   ctx.fillStyle = '#ddd';
+//   ctx.fillRect(x + 10, y + 10, 80, 25);
+//   ctx.fillStyle = '#000';
+//   ctx.font = 'bold 20px verdana';
+//   ctx.fillText(str, x + 20, y + 30, 60);
+
+// }, 0);
+
 // var rand = Math.floor(Math.random() * 0xFFFFFF).toString(16);
 //日图
 
 function renderDayChart() {
-  ctx = canvas.getContext('2d');
-  // ctx.clearRect(0,0,1000,500);
   var width = canvas.width;
   var height = canvas.height;
   canvas.width = width;
@@ -93,41 +104,92 @@ function renderDayChart() {
     color=Math.floor(Math.random() * 0xFFFFFF).toString(16);
     console.log(color);
     ctx.strokeStyle=  '#'+color;
-    
     ctx.stroke();
     ctx.closePath();
-
-    
   };
 }
 
 //周图
+// function renderWeekChart() {
+//   var width = canvas.width;
+//   var height = canvas.height;
+//   canvas.width = width;
+//   canvas.height = height;
+//   ctx.lineWidth=50;
+//   for(i=0;i<weekArray.length;i++){
+//     ctx.beginPath();
+//     ctx.moveTo(25+i*51,500);
+//     ctx.lineTo(25+i*51,500-weekArray[i]);
+//     color=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+//     console.log(color);
+//     ctx.strokeStyle=  '#'+color;
+//     ctx.stroke();
+//     ctx.closePath();
+//   };
+// }
+var tooltipData=[];
+
+  
+
 function renderWeekChart() {
-  // ctx.clearRect(0,0,1000,500);
   var width = canvas.width;
   var height = canvas.height;
   canvas.width = width;
   canvas.height = height;
-  ctx.lineWidth=50;
   for(i=0;i<weekArray.length;i++){
-    ctx.moveTo(25+i*51,500);
-    ctx.lineTo(25+i*51,500-weekArray[i]);
+    color=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    ctx.fillStyle='#'+color;
+    ctx.fillRect(0+i*51,500-weekArray[i],50,weekArray[i]);
     ctx.stroke();
+    var temp = [];
+    temp.push(0+i*51);
+    temp.push(50+i*51);
+    temp.push(500-weekArray[i]);
+    temp.push(myDates[i]+": "+Math.round(weekArray[i]));
+    tooltipData.push(temp);
+    temp=[];
   };
+}
+
+canvas.addEventListener('mousemove', function(e){
+  checkIfIn(e);
+});
+
+var coordinate = document.getElementById('coordinate')
+function checkIfIn(e){
+
+  var x = e.pageX - canvas.offsetLeft;
+  var y = e.pageY - canvas.offsetTop;
+  // console.log(tooltipData[1][4]);
+  // 
+  for(i=0;i<weekArray.length+1;i++){
+    if((x>tooltipData[i][0])&&(x<tooltipData[i][1])&&(y>tooltipData[i][2])){
+      canvas.title=tooltipData[i][3];
+      coordinate.textContent=x+","+y;
+      break;
+    } else{
+      canvas.title='';
+      coordinate.textContent=x+","+y;
+    }
+  }
 }
 
 //月图
 function renderMonthChart() {
-  // ctx.clearRect(0,0,1000,500);
   var width = canvas.width;
   var height = canvas.height;
   canvas.width = width;
   canvas.height = height;
   ctx.lineWidth=200;
   for(i=0;i<monthArray.length;i++){
+    ctx.beginPath();
     ctx.moveTo(100+i*201,500);
     ctx.lineTo(100+i*201,500-monthArray[i]);
+    color=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    console.log(color);
+    ctx.strokeStyle=  '#'+color;
     ctx.stroke();
+    ctx.closePath();
   };
 }
 
